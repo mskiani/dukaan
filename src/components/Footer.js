@@ -17,41 +17,43 @@ const Footer=()=>{
         <div className="d-flex justify-content-center" style={{background:"black"}}>
                 <div style={{width:"90%"}}>
                     <div className="d-flex  flex-xl-row flex-lg-row flex-md-row flex-column-reverse justify-content-around footer_floating">
-                        <div style={{marginTop:"100px"}}>
+                        <div className="footerText">
                             <p className="footer_para1">Download Dukkan App For Free</p>
                             <p className="footer_para2">Buy any product you want and get it within an hour</p>
 
-                            <div className="row m-0 mb-3">
-                                <div className="col-4 p-0" style={{cursor:"pointer"}} onClick={()=>openWindow("app_store")}>
+                            <div className="row m-0 mb-3 DownloadLinks">
+                                <div className="col-4 p-0 DownloadButtons" style={{cursor:"pointer"}} onClick={()=>openWindow("app_store")}>
                                     <img src={AppStore}  />
                                 </div>
-                                <div className="col-4" style={{cursor:"pointer"}} onClick={()=>openWindow("google_store")}>
+                                <div className="col-4 p-0 downloadButtons" style={{cursor:"pointer"}} onClick={()=>openWindow("google_store")}>
                                     <img src={GooglePlay}/>
                                 </div>
                                 
                             </div>
                         </div>
-                        <div style={{margin:"-180px 0px 0px 0px"}}>
+                        <div  style={{margin:"-180px 0px 0px 0px",
+                        display:"flex", justifyContent:"center"
+                    } }>
                             <img src={PhoneImg} width="80%" style={{objectFit:"contain",margin:"auto"}}/>
                         </div>
                     </div>
-                    <div className="row" style={{marginTop:"50px",marginBottom:"30px"}} >
-                        <div className="col"/>
-                        <div className="col-lg-3" style={{bacground:"red"}}>
+                    <div className="row footerContact1" style={{marginTop:"50px",marginBottom:"30px"}} >
+                        <div className="col "/>
+                        <div className="col-lg-3 footerAddresses">
                             <p className="footerPara3">Dubai International Financial Center, Dubai UAE</p>
                         </div>
                         <div className="col-lg-3" style={{bacground:"green"}}>
-                            <div className="d-flex">
+                            <div className="d-flex footerAddresses">
                                 <Phone color="white"/>
-                                <p className="footerPara2">+971 52 568 3437</p>
+                                <p className="footerPara5">+971 52 568 3437</p>
                             </div>
                         </div>
                         <div className="col-md-3" style={{bacground:"cyan"}}>
                             <div className="row m-0">
-                                <div className="col-12 p-0">
+                                <div className="col-12 p-0 footerAddresses">
                                     <p className="m-0 footerPara" >Follow Us</p>
                                 </div>
-                                <div className="col-12 d-flex flex-wrap justify-content-around p-0">
+                                <div className="col-12 d-flex flex-wrap justify-content-around p-0 ">
                                     
                                     <div className="rounded-circle d-flex justify-content-center align-items-center" style={{float:"right",border:"1px solid rgba(80, 88, 101, 1)",width:"40px",height:"40px"}}>
                                         <div>

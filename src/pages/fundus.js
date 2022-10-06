@@ -1,13 +1,11 @@
 import React from "react"
-import NavBar from "./NavBar"
-import {Row} from "reactstrap"
-import Home from "./Home"
-import SecondSection from "./SecondSection"
-import AboutUs from "./AboutUs"
-import ContactUs from "./ContactUs"
-import Footer from "./Footer"
+import NavBar from "../components/NavBar"
+import FundUsSectionBottom from "../components/FundUsSectionBottom"
+import Footer from "../components/Footer"
+import FundUsTopSection from "../components/FundUsTopSection"
+import ContactUsSectioinFundUsPage from "../components/contactUsSectionFundPage"
 
-const MainPage=()=>{
+const FundUs=()=>{
 
     return(
         <div style={{position:"relative",width:"100%"}}>
@@ -15,16 +13,16 @@ const MainPage=()=>{
                 <NavBar/>
             </div>
             <div id="home">
-                <Home/>
+            <FundUsTopSection/>
+              
             </div>
-            <div id="fundUs">
-                <SecondSection/>
-            </div>
-            <div id="aboutUs">
-                <AboutUs/>
-            </div>
+         
+           
             <div id="contactUs">
-                <ContactUs/>
+                <ContactUsSectioinFundUsPage/>
+            </div>
+            <div id="fundUsBottomSection">
+<FundUsSectionBottom/>
             </div>
             <div id="footer">
                 <Footer/>
@@ -42,4 +40,4 @@ const MainPage=()=>{
         </div>
     )
 }
-export default MainPage
+export default FundUs;

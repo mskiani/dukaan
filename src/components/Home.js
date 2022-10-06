@@ -4,9 +4,9 @@ import { Button, openWindow } from "./Snippets/snippets"
 import "../components/Styles/homeStyles.css"
 import EnterprenuerText from "../assets/images/enterpreneur.png"
 import Rocket from "../assets/images/animation.gif"
-
+import { useNavigate } from "react-router-dom";
 const Home=()=>{
-
+    let navigate = useNavigate();
     return(
        <div className="home">
             <Row className="m-0">
@@ -33,7 +33,7 @@ const Home=()=>{
                         </Col>
                         <Col xl="12" className="position-relative buttonWrapper">
                             {/* <div className="blurSpot"></div> */}
-                            <Button style={{textAlign:"center"}} onClick={()=>openWindow("fund_us")}>
+                            <Button style={{textAlign:"center"}} onClick={()=>navigate("/fundus")}>
                                 Fund Us
                             </Button>
                         </Col>

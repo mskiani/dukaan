@@ -6,6 +6,17 @@
     padding-bottom: 350px;
     overflow: hidden;
 }
+.contactUs2{
+    
+    background-color: #09027E;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 150px;
+    overflow: hidden;
+}
+
+
+
 /* 
 height: 96px;
 width: 401px;
@@ -129,15 +140,10 @@ border-radius: nullpx; */
     margin:10px 0px;
 }
 .sponsers{
-
     border-right:"3px solid rgba(255, 255, 255, 0.39)";
-    
     margin-top:"36.94px";
-
-
 }
 .contact_inputs1{
-
     height: 133.51px;
     width: 100%;
     background-color: transparent;
@@ -146,9 +152,11 @@ border-radius: nullpx; */
     border: 1.16941px solid #B4BEC8;
     border-radius: 3.89804px;
     margin:10px 0px 40px 0px;
+    text-align: left;
+
+
 }
 ::placeholder {
-    
     color:#B4BEC8;
     font-family: 'Poppins',sans-serif;
     font-style: normal;
@@ -156,9 +164,47 @@ border-radius: nullpx; */
     font-size: 15.5922px;
     color: #FFFFFF;
     opacity: 0.8;
+
     
   }
   
+  .contactFormAddress{
+
+    
+padding-left: 140px;
+padding-bottom: 0px;
+}
+.contactFormAddress2{
+
+    
+    padding-left: 140px;
+    padding-bottom: 30px;
+    margin-top: -50px;
+    }
+    
+
+.map{
+
+    margin-top:20px;
+    padding-bottom:0px;
+    overflow:hidden;
+}
+
+.firstPointParafund{
+
+    /* width: 440.6466369628906px; */
+
+    font-family: "Poppins",sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: white;
+
+
+}
+
   @media (max-width: 767px) {
 
   
@@ -168,6 +214,22 @@ border-radius: nullpx; */
         
         margin-top:52px;
     
+    }
+
+    .contactFormAddress{
+
+    
+        padding-left: 140px;
+        padding-bottom: 0px;
+        }
+    
+    
+
+    .map{
+
+        margin-top:20px;
+        padding-bottom:30px;
+        align-self: center;
     }
     .underline_backers{
     
@@ -221,9 +283,12 @@ display: flex;
         align-items: center;
         flex-direction: column;
         align-content: center;
+padding-left: 0px;
     }
     
   }
+
+
 
   /* @media (min-width:1260px){
 

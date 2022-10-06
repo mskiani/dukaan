@@ -37,7 +37,7 @@ const NavBar = props => {
                     </NavItem>
                     
                     <NavItem className="w-auto" style={{fontFamily:"Poppins,sans-serif"}}>
-                        <NavLink href="#fundUs" style={{color:'#ffff',fontSize:'20px'}}>Fund Us</NavLink>
+                        <NavLink href="/fundUs" style={{color:'#ffff',fontSize:'20px'}}>Fund Us</NavLink>
                     </NavItem>
 
                     <NavItem className="w-auto" style={{fontFamily:"Poppins,sans-serif"}}>

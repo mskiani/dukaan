@@ -7,7 +7,10 @@ import Group25 from "../assets/images/Frame 98.png"
 import Group18169 from "../assets/images/Group 18169.png"
 import { Button, openWindow } from "./Snippets/snippets"
 
+import { useNavigate } from "react-router-dom";
 const AboutUs=()=>{
+
+    let navigate = useNavigate();
     return(
         <div className="aboutUs">
             <div className="row m-0" style={{width:"90%",overflow:"hidden"}}>
@@ -138,7 +141,7 @@ const AboutUs=()=>{
                 <div className="col-12 mb-5">
                     <div className="position-relative fundUsWrapper" style={{marginTop:"78.3px"}}>
                         {/* <div className="blurSpot"></div> */}
-                        <Button className="text-center" onClick={()=>openWindow("fund_us")}>
+                        <Button className="text-center" onClick={()=>navigate("/fundus")}>
                             Fund Us
                         </Button>
                     </div>
