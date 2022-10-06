@@ -1,0 +1,125 @@
+.secondSection{
+    background-color: #09027E;
+    display: flex;
+    justify-content: center;
+}
+
+.gridContainer{
+
+    /* display: grid;
+    grid-template-columns: auto auto auto auto; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 100px 0px;
+
+}
+.blur_spot{
+    position: absolute;
+    top: 0%;
+    left: 16%;
+    height: 210.49411010742188px;
+    width: 210.49411010742188px;
+    /* z-index: 10; */
+    background: rgba(255, 116, 46, 1);
+    border-radius: 50%;
+    filter: blur(180px);
+}
+.card{
+
+    padding: 20px;
+    height: 218px;
+    width: 221px;
+    left: 0px;
+    top: 0px;
+    border-radius: 16px;
+
+    box-sizing: border-box;
+
+    /* background: radial-gradient(50% 50% at 50% 50%, #151515 0%, rgba(21, 21, 21, 0) 100%), */
+    /* conic-gradient(from 180deg at 50% 50%, rgba(255, 255, 255, 0) 0deg, rgba(203, 33, 125, 0.5) 45.05deg, rgba(227, 136, 185, 0.268987) 173.09deg, rgba(255, 255, 255, 0) 360deg), */
+    /* conic-gradient(from 180deg at 50% 50%, rgba(226, 0, 197, 0.5) -92.02deg, rgba(255, 255, 255, 0) 18.84deg, rgba(226, 0, 197, 0.5) 267.98deg, rgba(255, 255, 255, 0) 378.84deg), */
+    /* linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.0580941) 99.99%, rgba(255, 255, 255, 0) 100%); */
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.0580941) 99.99%, rgba(255, 255, 255, 0) 100%);   
+    backdrop-filter: blur(6.5px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 16px;
+
+    border: 1.5px solid purple;
+
+}
+.card_Para{
+    height: 60px;
+    /* width: 274px; */
+    left: 77px;
+    top: 1060px;
+    
+    font-family: 'Poppins',sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    color: white;
+
+    padding: 37px 8px ;
+
+}
+.card_Para1{
+    height: 60px;
+    /* width: 206px; */
+    left: 77px;
+    top: 1060px;
+    
+    font-family: 'Poppins',sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    color: white;
+
+    padding: 37px 8px ;
+
+}
+.card_Para2{
+    height: 60px;
+    /* width: 214px; */
+    left: 77px;
+    top: 1060px;
+    
+    font-family: 'Poppins',sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    color: white;
+
+    padding: 37px 8px ;
+
+}
+.card_Para3{
+    height: 60px;
+    /* width: 214px; */
+    left: 77px;
+    top: 1060px;
+    
+    font-family: 'Poppins',sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    color: white;
+
+    padding: 37px 8px ;
+
+}
+

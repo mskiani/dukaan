@@ -1,0 +1,149 @@
+
+
+.home{
+    background-image: url("../../assets/images/Mask\ group.png");
+    background-size: cover;
+    overflow: hidden;
+}
+.homeText{
+
+    margin-top: 80px;
+    width: 658px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 95px;
+    font-weight: 700;
+    line-height: 129px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+}
+
+@media (max-width: 767px) {
+
+    .homeText{
+
+        margin-top: 192px;
+      width: 324px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 63px;
+        letter-spacing: 0em;
+        text-align:center;
+        color: white;
+    }
+
+   
+}
+
+
+.homeText2{
+    
+    font-family:'Montserrat',sans-serif;
+    font-size: 24px;
+    /* font-weight: 200; */
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+    margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+
+    .homeText2{
+    
+    font-family:'Montserrat',sans-serif;
+    font-size: 14px;
+    /* font-weight: 200; */
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  
+    text-align: center;
+    justify-content: center;
+}
+
+}
+
+
+
+
+.homeText3{
+
+    font-family: 'Poppins',sans-serif;
+    margin-top: 40px ;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 66px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+}
+
+.blurSpot{
+    position: absolute;
+    cursor: pointer;
+    top: 0%;
+    left: 5%;
+    height: 100px;
+    width: 210.49411010742188px;
+    z-index: 10;
+    background: rgba(255, 116, 46, 1);
+    border-radius: 50%;
+    filter: blur(141px);
+}
+
+.underline1{
+    
+    clip-path: polygon(0% 0%,100% 0%,100% 5%,0% 14%);
+    background: rgba(255, 116, 46, 1);
+    height: 76.812553332539697px;
+    width: 400px;
+    left: 103px;
+    top: 1470.60986328125px;
+    border-radius: 0px;
+    transform: rotate(-2.35deg);
+
+}
+
+
+@media (max-width: 767px) {
+
+    .underline1{
+    
+      
+        width: 187px;
+     
+    }
+    
+    .buttonWrapper{
+        display: flex;
+        justify-content: center;
+    
+    }
+    .featuredTitle{
+
+      float: none;
+    }
+    .featuredSection{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.featuredTitle{
+
+    float: right;
+}
+
+
+
+
+
+
