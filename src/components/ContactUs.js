@@ -9,11 +9,43 @@ import Twitter from "../assets/images/Twitter.png"
 import Facebook from "../assets/images/fb.png"
 import Youtube from "../assets/images/youtube.png"
 import Instagram from "../assets/images/instagram.png"
+import { useForm } from 'react-hook-form';
 
+import emailjs from 'emailjs-com';
 // import { Facebook, Instagram, Twitter} from "react-feather"
 
 const ContactUs=()=>{
 
+
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors }
+      } = useForm();
+      
+      const onSubmit = async (data) => {
+        const { name, email, message } = data;
+        console.log("hellos gggg"+data)
+        try {
+          const templateParams = {
+            name,
+            email,
+            message
+          };
+          await emailjs.send(
+            process.env.REACT_APP_SERVICE_ID,
+            process.env.REACT_APP_TEMPLATE_ID,
+            templateParams,
+            process.env.REACT_APP_USER_ID
+          );
+      reset();
+        } catch (e) {
+          console.log("hjhkjhjk"+data);
+        }
+      };
+    
     return(
         <div className="contactUs">
             <div className="row m-0" style={{width:"90%" , overflow: "hidden"}}>
@@ -72,9 +104,36 @@ const ContactUs=()=>{
                                 <div className="row m-0" >
 
                                     <div className="col-md-6" style={{padding:"30px 0px"}}>
-                                        <input className="contact_inputs" placeholder="Full Name"/>
-                                        <input className="contact_inputs" placeholder="Email Address"/>
-                                        <textarea className="contact_inputs1" placeholder="Your Message" />
+                                    <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
+                                        <input className="contact_inputs" placeholder="Full Name"  name="name" type="text"   {...register('name', {
+                        required: { value: true, message: 'Please enter your name' },
+                        maxLength: {
+                          value: 30,
+                          message: 'Please use 30 characters or less'
+                        }
+                      })} />
+                         {errors.name && <span className='errorMessage'>{errors.name.message}</span>}
+
+
+
+                                        <input className="contact_inputs" placeholder="Email Address"     type='email'
+                      name='email'
+                      {...register('email', {
+                        required: true,
+                        pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                      })}
+                     
+                   />
+                                     {errors.email && (
+                      <span className='errorMessage'>Please enter a valid email address</span>
+                    )}
+                                        <textarea className="contact_inputs1" placeholder="Your Message"   name='message'
+                      {...register('message', {
+                        required: true
+                      })}
+                   />
+                    {errors.message && <span className='errorMessage'>Please enter a message</span>}
+                                   
                                         <div className="w-100 position-relative">
                                         
                                             <div 
@@ -94,10 +153,12 @@ const ContactUs=()=>{
                                             className="text-center"
                                             width="100%"
                                             height="48.73px"
+                                            type="submit"
                                             >
                                                 Send
                                             </Button>
                                         </div>
+                                        </form>
                                     </div>
                                     <div className="col-md-6  contactFormAddress">
                                         <p className="contact_form_para1">
