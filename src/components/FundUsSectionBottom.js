@@ -33,7 +33,7 @@ const FundUsSectionBottom=()=>{
                         </Col>
                         <Col xl="12" className="position-relative buttonWrapper2">
                             {/* <div className="blurSpot"></div> */}
-                            <Button style={{textAlign:"center"}} onClick={()=>navigate("/fundus")}>
+                            <Button style={{textAlign:"center"}} onClick={()=>window.open('https://dubainext.ae/embed/card-view/495','_blank')  }>
                                 Fund Us
                             </Button>
                         </Col>
