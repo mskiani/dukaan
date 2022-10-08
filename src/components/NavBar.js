@@ -9,7 +9,7 @@ import {
     NavLink,Row,Col} from 'reactstrap';
 import Logo from "../assets/images/Logo.png"
 
-
+import "../components/Styles/homeStyles.css"
 const NavBar = props => {
 
     const [isOpen,setOpen] = useState(false);
@@ -33,23 +33,23 @@ const NavBar = props => {
             <Collapse isOpen={isOpen} navbar style={{width:"max-content"}}>
                 <Nav className="col-md-6 ml-auto w-100 d-flex justify-content-around" navbar >
                     <NavItem className="w-auto" style={{fontFamily:"Poppins,sans-serif"}}>
-                        <NavLink href="/" style={{color:'#ffff',fontSize:'20px'}}>Home</NavLink>
+                        <NavLink href="/" className="fontSize" >Home</NavLink>
                     </NavItem>
                     
                     <NavItem className="w-auto" style={{fontFamily:"Poppins,sans-serif"}}>
-                        <NavLink href="/fundus" style={{color:'#ffff',fontSize:'20px'}}>Fund Us</NavLink>
+                        <NavLink href="/fundus"className="fontSize">Fund Us</NavLink>
                     </NavItem>
 
                     <NavItem className="w-auto" style={{fontFamily:"Poppins,sans-serif"}}>
-                        <NavLink href="#aboutUs" style={{color:'#ffff',fontSize:'20px'}}>About Us</NavLink>
+                        <NavLink href="#aboutUs" className="fontSize">About Us</NavLink>
                     </NavItem>
 
                     <NavItem className="w-auto" style={{fontFamily:"Poppins,sans-serif"}}>
-                        <NavLink href="#contactUs" style={{color:'#ffff',fontSize:'20px'}}>Contact Us</NavLink>
+                        <NavLink href="#contactUs" className="fontSize">Contact Us</NavLink>
                     </NavItem>
 
                     <NavItem className="w-auto" style={{fontFamily:"Poppins,sans-serif"}}>
-                        <NavLink href="https://dukkanapp.online/shop/apply" style={{color:'#ffff',fontSize:'20px'}}>Become Seller</NavLink>
+                        <NavLink href="https://dukkanapp.online/shop/apply" className="fontSize">Become Seller</NavLink>
                     </NavItem>
                 </Nav>
             </Collapse>

@@ -125,7 +125,7 @@ contact you </p>
                                      {errors.email && (
                       <span className='errorMessage'>Please enter a valid email address</span>
                     )}
-                                        <input className="contact_inputs1" placeholder="cheque no "   name='message' type="text"
+                                        <textarea className="contact_inputs1" placeholder="Cheque Size "   name='message' type="text"
                       {...register('message', {
                         required: true
                       })}
@@ -167,7 +167,7 @@ contact you </p>
                                             </div>
                                             <div className="d-flex justify-content-center align-items-center">
                                                 <div>
-                                                    <img src={Instagram} width="100%" objectFit="contain"/>
+                                              <a href="https://www.instagram.com/dukkan_app/">      <img src={Instagram} width="100%" objectFit="contain"/></a> 
                                                 </div>
                                                 
                                             </div>

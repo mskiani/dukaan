@@ -199,7 +199,7 @@ console.log("hello")
                                             </div>
                                             <div className="d-flex justify-content-center align-items-center">
                                                 <div>
-                                                    <img src={Instagram} width="100%" objectFit="contain"/>
+                                                <a href="https://www.instagram.com/dukkan_app/">       <img src={Instagram} width="100%" objectFit="contain"/> </a>
                                                 </div>
                                                 
                                             </div>
