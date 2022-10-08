@@ -33,11 +33,11 @@ const NavBar = props => {
             <Collapse isOpen={isOpen} navbar style={{width:"max-content"}}>
                 <Nav className="col-md-6 ml-auto w-100 d-flex justify-content-around" navbar >
                     <NavItem className="w-auto" style={{fontFamily:"Poppins,sans-serif"}}>
-                        <NavLink href="#home" style={{color:'#ffff',fontSize:'20px'}}>Home</NavLink>
+                        <NavLink href="/" style={{color:'#ffff',fontSize:'20px'}}>Home</NavLink>
                     </NavItem>
                     
                     <NavItem className="w-auto" style={{fontFamily:"Poppins,sans-serif"}}>
-                        <NavLink href="/fundUs" style={{color:'#ffff',fontSize:'20px'}}>Fund Us</NavLink>
+                        <NavLink href="/fundus" style={{color:'#ffff',fontSize:'20px'}}>Fund Us</NavLink>
                     </NavItem>
 
                     <NavItem className="w-auto" style={{fontFamily:"Poppins,sans-serif"}}>
