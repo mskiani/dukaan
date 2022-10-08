@@ -13,7 +13,7 @@ import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
 // import { Facebook, Instagram, Twitter} from "react-feather"
-
+import 'react-toastify/dist/ReactToastify.min.css';
 const ContactUsSectioinFundUsPage=()=>{
 
 
@@ -133,7 +133,7 @@ contact you </p>
                                         <div className="w-100 position-relative">
                                         
                                        
-
+                                        <ToastContainer />
                                             <Button
                                             className="text-center"
                                             width="100%"
@@ -147,7 +147,7 @@ contact you </p>
                                         </div>
                                         </form>
                                     </div>
-
+                                   
                                     <div className="col-md-6  contactFormAddress">
                                         <p className="contact_form_para1">
                                         Financial Center, Dubai UAE
