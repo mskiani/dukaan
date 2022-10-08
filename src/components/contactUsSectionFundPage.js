@@ -9,11 +9,68 @@ import Twitter from "../assets/images/Twitter.png"
 import Facebook from "../assets/images/fb.png"
 import Youtube from "../assets/images/youtube.png"
 import Instagram from "../assets/images/instagram.png"
-
+import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import emailjs from 'emailjs-com';
 // import { Facebook, Instagram, Twitter} from "react-feather"
 
 const ContactUsSectioinFundUsPage=()=>{
 
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors }
+      } = useForm();
+      
+      const toastifySuccess = () => {
+        console.log("showing toast")
+        toast('Form sent!', {
+          position: 'bottom-right',
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          className: 'submit-feedback success',
+          toastId: 'notifyToast'
+        });
+      };
+    // Function called on submit that uses emailjs to send email of valid contact form
+    const onSubmit = async (data) => {
+        // Destrcture data object
+        const { name, email, subject, message } = data;
+        
+console.log("hello"+name + email + message)
+        try {
+          const templateParams = {
+            name,
+            email,
+            message
+          };
+    
+          await emailjs.send(
+            "service_9qasc2r",
+            "template_djlhcgy",
+            templateParams,
+         "BLC6prPD2L4v_uR_9"
+          );
+    
+          reset();
+          
+      toastifySuccess();
+      
+        } catch (e) {
+          console.log(e);
+        }
+      };
+
+      const Hello =()=>{
+
+console.log("hello")
+      };
+    
     return(
         <div className="contactUs2">
             <div className="row m-0" style={{width:"90%" , overflow: "hidden"}}>
@@ -42,38 +99,55 @@ const ContactUsSectioinFundUsPage=()=>{
                                     <p className="firstPointParafund" >Submit Form Below Our team will 
 contact you </p>
                                 </div>
-                                <div className="row m-0" >
+                                <div className="row m-0 forminfundus" >
 
                                     <div className="col-md-6" style={{padding:"30px 0px"}}>
-                                        <input className="contact_inputs" placeholder="Full Name"/>
-                                        <input className="contact_inputs" placeholder="Email Address"/>
-                                        <input className="contact_inputs" placeholder="Cheque Size " style={{}}/>
+                                    <form id='contact-form' onSubmit={handleSubmit(onSubmit)}>
+                                    <input className="contact_inputs" placeholder="Full Name"  name="name" type="text"   {...register('name', {
+                        required: { value: true, message: 'Please enter your name' },
+                        maxLength: {
+                          value: 30,
+                          message: 'Please use 30 characters or less'
+                        }
+                      })} />
+                         {errors.name && <span className='errorMessage'>{errors.name.message}</span>}
+
+
+
+                                        <input className="contact_inputs" placeholder="Email Address"     type='email'
+                      name='email'
+                      {...register('email', {
+                        required: true,
+                        pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                      })}
+                     
+                   />
+                                     {errors.email && (
+                      <span className='errorMessage'>Please enter a valid email address</span>
+                    )}
+                                        <input className="contact_inputs1" placeholder="cheque no "   name='message' type="text"
+                      {...register('message', {
+                        required: true
+                      })}
+                   />
                                         <div className="w-100 position-relative">
                                         
-                                            <div 
-                                            style={{
-                                                cursor:"pointer",
-                                                position:"absolute",
-                                                top:"20%",
-                                                height:"70px",
-                                                width:"100%",
-                                                zIndex:10,
-                                                background:"rgba(255, 116, 46, 1)",
-                                                borderRadius:"40%",
-                                                filter:"blur(100px)",
-                                             
-                                                }}/>
+                                       
 
                                             <Button
                                             className="text-center"
                                             width="100%"
                                             height="48.73px"
+                                            type="submit"
                                             style={{marginTop:"30px"}}
                                             >
                                                 Send
                                             </Button>
+                                            
                                         </div>
+                                        </form>
                                     </div>
+
                                     <div className="col-md-6  contactFormAddress">
                                         <p className="contact_form_para1">
                                         Financial Center, Dubai UAE
@@ -123,6 +197,7 @@ contact you </p>
 
                 </div>
             </div>
+            
         </div>
     )
 }

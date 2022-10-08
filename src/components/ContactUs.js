@@ -5,12 +5,14 @@ import govt from "../assets/images/govt.png"
 import finance from "../assets/images/finance.png"
 import { Button } from "./Snippets/snippets"
 
+import 'react-toastify/dist/ReactToastify.min.css';
 import Twitter from "../assets/images/Twitter.png"
 import Facebook from "../assets/images/fb.png"
 import Youtube from "../assets/images/youtube.png"
 import Instagram from "../assets/images/instagram.png"
 import { useForm } from 'react-hook-form';
 
+import { ToastContainer, toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
 // import { Facebook, Instagram, Twitter} from "react-feather"
 
@@ -25,27 +27,54 @@ const ContactUs=()=>{
         formState: { errors }
       } = useForm();
       
-      const onSubmit = async (data) => {
-        const { name, email, message } = data;
-        console.log("hellos gggg"+data)
+      const toastifySuccess = () => {
+        console.log("showing toast")
+        toast('Form sent!', {
+          position: 'bottom-right',
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          className: 'submit-feedback success',
+          toastId: 'notifyToast'
+        });
+      };
+    // Function called on submit that uses emailjs to send email of valid contact form
+    const onSubmit = async (data) => {
+        // Destrcture data object
+        const { name, email, subject, message } = data;
+        
+console.log("hello"+name + email + message)
         try {
           const templateParams = {
             name,
             email,
             message
           };
+    
           await emailjs.send(
-            process.env.REACT_APP_SERVICE_ID,
-            process.env.REACT_APP_TEMPLATE_ID,
+            "service_9qasc2r",
+            "template_djlhcgy",
             templateParams,
-            process.env.REACT_APP_USER_ID
+         "BLC6prPD2L4v_uR_9"
           );
-      reset();
+    
+          reset();
+          
+      toastifySuccess();
+      
         } catch (e) {
-          console.log("hjhkjhjk"+data);
+          console.log(e);
         }
       };
+
+      const Hello =()=>{
+
+console.log("hello")
+      };
     
+  
     return(
         <div className="contactUs">
             <div className="row m-0" style={{width:"90%" , overflow: "hidden"}}>
@@ -104,7 +133,7 @@ const ContactUs=()=>{
                                 <div className="row m-0" >
 
                                     <div className="col-md-6" style={{padding:"30px 0px"}}>
-                                    <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
+                                    <form id='contact-form' onSubmit={handleSubmit(onSubmit)}>
                                         <input className="contact_inputs" placeholder="Full Name"  name="name" type="text"   {...register('name', {
                         required: { value: true, message: 'Please enter your name' },
                         maxLength: {
@@ -127,7 +156,7 @@ const ContactUs=()=>{
                                      {errors.email && (
                       <span className='errorMessage'>Please enter a valid email address</span>
                     )}
-                                        <textarea className="contact_inputs1" placeholder="Your Message"   name='message'
+                                        <textarea className="contact_inputs1" placeholder="Your Message"   name='message' type="text"
                       {...register('message', {
                         required: true
                       })}
@@ -136,28 +165,19 @@ const ContactUs=()=>{
                                    
                                         <div className="w-100 position-relative">
                                         
-                                            <div 
-                                            style={{
-                                                cursor:"pointer",
-                                                position:"absolute",
-                                                top:"20%",
-                                                height:"70px",
-                                                width:"100%",
-                                                zIndex:10,
-                                                background:"rgba(255, 116, 46, 1)",
-                                                borderRadius:"40%",
-                                                filter:"blur(100px)"
-                                                }}/>
+                                        
 
                                             <Button
                                             className="text-center"
                                             width="100%"
                                             height="48.73px"
                                             type="submit"
+                                           
                                             >
                                                 Send
                                             </Button>
                                         </div>
+                                    
                                         </form>
                                     </div>
                                     <div className="col-md-6  contactFormAddress">
@@ -210,6 +230,7 @@ const ContactUs=()=>{
 
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }
