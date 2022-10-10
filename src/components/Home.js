@@ -50,7 +50,7 @@ const Home=()=>{
 
                 </Col>
 
-                <Col xl="5" lg="5" className="d-xl-flex d-lg-flex justify-content-center align-items-center d-none">
+                <Col xl="5" lg="5" className="d-xl-flex d-lg-flex justify-content-center  d-none">
                     <div>
                         <img src={Rocket} width="100%" />
                     </div>

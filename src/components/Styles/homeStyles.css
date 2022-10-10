@@ -19,12 +19,19 @@
 
 .home{
     background-image: url("../../assets/images/Mask\ group.png");
-    background-size: cover;
+    background-size:cover;
     overflow: hidden;
+    margin-top: auto;
+
+
+}
+.mainSection{
+
+    margin: 100px;
 }
 .homeText{
 
-    margin-top: 80px;
+    margin-top: 0px;
     width: 658px;
     font-family: 'Poppins', sans-serif;
     font-size: 95px;
